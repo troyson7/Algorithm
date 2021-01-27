@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main(void) {
+    int n, temp, i, j;
+    cin>>n;
+    int a[1000]={0};
+
+    for(i = 0; i < n; i++) {
+        cin>>a[i];
+    }
+
+    //bubblesort
+    for(i = 0; i < n; i++) {
+        for( j = 0; j < n-1-i; j++) { //for문 한번 돌면 최댓값이 가장 뒤에 배열
+            if(a[j] > a[j+1]) {
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+    }
+
+    cout<<"Bubblesort: ";
+    for(i = 0; i < n; i++) {
+        
+        cout<<a[i]<<' ';
+    }
+    return 0;
+}
